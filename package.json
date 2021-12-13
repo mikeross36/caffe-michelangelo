@@ -7,6 +7,7 @@
   "devDependencies": {
     "@snowpack/plugin-react-refresh": "^2.5.0",
     "@snowpack/web-test-runner-plugin": "^0.2.2",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@web/test-runner": "^0.13.20",
     "chai": "^4.3.4",
@@ -14,7 +15,7 @@
   },
   "dependencies": {
     "@snowpack/plugin-sass": "^1.4.0",
-    "framer-motion": "^5.3.0",
+    "framer-motion": "^5.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
