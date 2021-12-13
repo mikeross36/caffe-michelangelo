@@ -1,0 +1,52 @@
+.tabs-content {
+    grid-column: 1/-1;
+    grid-row: 3;
+    width: 100%;
+    height: auto;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    overflow-y: auto;
+    
+    & h3 {
+        text-align: center;
+        padding: 1rem;
+        color: $textClr;
+    }
+
+    @include breakpoint-up(medium){
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    margin: 0 auto;
+    padding: .5rem 1rem;
+    height: auto;
+    color: $textClr;
+
+    & h4 {
+        padding-bottom: .5rem;
+        text-transform: uppercase;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 900;
+    }
+
+    & p {
+        padding-bottom: .3rem;
+    }
+
+    @include breakpoint-up(large) {
+        & div {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.active-content {
+    transform: translateX(0%);
+    transition-delay: .3s;
+}
+

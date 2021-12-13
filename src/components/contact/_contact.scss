@@ -1,0 +1,109 @@
+.contact {
+    height: 100%;
+    padding: 2rem;
+    background-image: linear-gradient(
+        rgba($mainBlack, .5), 
+        rgba($mainBlack,.5)), 
+        url(images/shisha.jpg);
+    background-repeat: no-repeat;
+    background-position-x: 25%;
+    background-size: cover;
+
+    @include breakpoint-up(medium) {
+       background-position: top/center;
+    }
+
+    @include breakpoint-up(large){
+        height: 100vh;
+    }
+}
+
+.contact-text {
+    color: $mainGold;
+    text-transform: uppercase;
+    text-shadow: $textShadow;
+}
+
+.company-info {
+    margin-top: 3rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    @include breakpoint-up(medium){
+        margin: 5rem 0 0 5rem;
+       
+    }
+
+    @include breakpoint-up(large){
+        width: 50%;
+    }
+
+    & .item-info {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+        transition: all .5s ease-in-out;
+
+        & .fa {
+            color: $mainGold;
+            margin-right: 1.5rem;
+            font-size: $fontLg;
+            filter: drop-shadow($textShadow);
+        }
+
+        & p {
+            font-size: $fontSm;
+            line-height: 1.7;
+            color: $white;
+            text-shadow: $textShadow;
+
+            @include breakpoint-up(large){
+                font-size: $fontMd;
+            }
+        }
+
+        @include breakpoint-up(medium){
+            &:hover {
+                padding-left: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: $fontLg;
+    margin: 3rem 0;
+
+    & .fu-fa {
+        color: $mainGold;
+        filter: drop-shadow($textShadow);
+        transition: all .3s ease-in-out;
+        margin: 0 2rem;
+
+        &:hover {
+            transform: skew(-7deg, 7deg) scale(1.5);
+            color: $white;
+        }
+
+        @include breakpoint-up(medium) {
+            font-size: $fontXlg;
+        }
+    }
+}
+
+footer {
+    background: maroon;
+
+    & .footer-text {
+        text-align: center;
+        padding: .5rem 1rem;
+        color: $white;
+        font-size: .8rem;
+        font-weight: normal;
+    }
+}

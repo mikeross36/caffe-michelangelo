@@ -1,0 +1,223 @@
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    background: url(images/banner-bcg.jpg) top/cover no-repeat;
+    filter: drop-shadow($boxShadow);
+}
+
+nav {
+
+    @include breakpoint-up(large) {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 1rem;
+    }
+}
+
+.logo {
+    width: 11rem;
+    height: 6rem;
+    z-index: 10;
+    border-radius: 1rem;
+    filter: drop-shadow($boxShadow);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include breakpoint-up(large) {
+        margin-left: 0;
+    }
+}
+
+.menu-btn {
+    top: 2rem;
+    right: 5rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+
+    @include breakpoint-up(large) {
+        display: none;
+    } 
+}
+
+.burger {
+    position: absolute;
+    display: block;
+    height: .5rem;
+    width: 3rem;
+    background: $mainGold;
+    box-shadow: $boxShadow;
+    opacity: 1;
+    left: 0;
+    border-radius: .5rem;
+    z-index: 10;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition:  all .5s ease-in-out;
+
+    &:nth-child(1) {
+        top: 0;
+        &.open {
+            top: 1.125rem;
+            transform: rotate(135deg);
+        }
+    }
+    &:nth-child(2) {
+        top: .8875rem;
+        &.open {
+            opacity: 0;
+            left: -3.75rem;
+        }
+    }
+    &:nth-child(3) {
+        top: 1.775rem;
+        &.open {
+            top: 1.125rem;
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+.links {
+    display: none;
+   
+    @include breakpoint-up(large){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+}
+
+.nav-item {
+    font-size: $fontMd;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: 0 2rem;
+    text-shadow: $textShadow;
+
+    & a {
+        color: $white;
+        z-index: 10;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    1% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    99% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.mob-links {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+
+    @include breakpoint-up(large){
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    &.fade-in {
+        animation: fade-in .5s ease-in-out forwards;
+    }
+    &.fade-out {
+        animation: fade-out .3s ease-in-out forwards;
+    }
+}
+
+.mob-link-item {
+    display: block;
+    font-size: $fontXlg;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    letter-spacing: 2px;
+
+    & a {
+        color: $white;
+        padding: 0 .3rem;
+        background: rgba($mainBlack, .5);
+        text-shadow: $textShadow;
+        z-index: 10 !important;
+    }
+}
+
+.banner {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-wrapper {
+    color: $mainGold;
+    text-shadow: $textShadow;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -5rem;
+    transition-delay: .3s;
+
+    &.fade-in {
+        animation: fade-in .5s ease-in-out forwards;
+    }
+    &.fade-out {
+        animation: fade-out .3s ease-in-out forwards;
+    }
+
+    @include breakpoint-up(large) {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    & h1 {
+        font-size: $fontXlg;
+        text-transform: capitalize;
+        line-height: 1.3;
+        padding: 1rem;
+        margin: 1rem;
+
+        @include breakpoint-up(large) {
+            font-size: 4rem;
+        }
+    }
+}

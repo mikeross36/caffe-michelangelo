@@ -1,0 +1,61 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 2rem;
+        @include breakpoint-up(large) {
+            font-size: 2.5rem;
+        }
+}
+h2 {
+    font-size: 1.5rem;
+        @include breakpoint-up(large) {
+            font-size: 2rem;
+        }
+}
+h3 {
+    font-size: 1.2rem;
+        @include breakpoint-up(large) {
+            font-size: 1.7rem;
+        }
+}
+
+.main-button {
+    display: inline-block;
+    padding: .3rem 1rem;
+    border: .1rem solid $mainGold;
+    color: $mainGold;
+    font-size: 3rem;
+    font-weight: 800;
+    border-radius: .625rem;
+    background: transparent;
+    transition: all .1s ease-in-out;
+    filter: drop-shadow($boxShadow);
+    box-shadow: $boxShadow;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+

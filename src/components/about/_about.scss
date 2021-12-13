@@ -1,0 +1,62 @@
+.about {
+    height: 100%;
+    margin: 2rem 0;
+    padding: 2rem 0 3rem 0;
+    background: url(images/about-bcg.jpg)center/cover fixed no-repeat;
+    filter: drop-shadow($boxShadow);
+
+    @include breakpoint-up(medium) {
+        display: grid;
+        grid-template-columns: 80%;
+        justify-content: center;
+    }
+
+    @include breakpoint-up(large){
+        height: 100vh;
+    }
+}
+
+.title {
+    margin: .7rem;
+    cursor: pointer;
+    text-align: center;
+
+    .about-title {
+        text-transform: uppercase;
+        color: $mainGold;
+        text-shadow: $textShadow;
+        padding: .5rem 0;
+    }
+}
+
+.about-text {
+    padding: 1.5rem;
+    margin: 0 auto;
+    background: linear-gradient(rgba($mainBlack, .3), rgba($mainBlack, .3));
+    margin-bottom: 1rem;
+
+    & p {
+        margin: 1rem 0;
+        font-size: $fontSm;
+        color: $white;
+        text-shadow: $textShadow;
+        line-height: 1.5;
+
+        @include breakpoint-up(medium) {
+            font-size: $fontMd;
+        }
+
+        @include breakpoint-up(large) {
+            width: 90%;
+            margin: 2rem auto;
+        }
+    }  
+}
+
+.section-btn {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
